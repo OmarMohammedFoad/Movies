@@ -2,6 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { FlatList, Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import Config from 'react-native-config';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
@@ -38,7 +39,7 @@ function HomeScreen() {
     try {
       const response = await axios.get(`https://api.themoviedb.org/3/movie/${categoryKey}?language=en-US&page=1`, {
         headers: {
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjZDg1MjQ0NTNjMDlmMDJiOGIxZGEwN2EyMzdhNDEyNiIsIm5iZiI6MTczOTcwNjI5Ny40OTcsInN1YiI6IjY3YjFjZmI5ODVmNTc2ZTk3ZDZkYjg3ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.rEYNtq2ENmlkDbhb7Ql9MzrQ9oF23gLyChXjkJ1e02A'
+          Authorization: `Bearer ${Config.TOKEN}`
         }
       });
 
@@ -63,7 +64,6 @@ function HomeScreen() {
 
 
 
-  // @ts-ignore
   return (
 
 

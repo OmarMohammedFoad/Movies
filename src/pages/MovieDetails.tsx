@@ -1,9 +1,9 @@
 import axios from 'axios';
 import React, { Suspense, useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList, Image, Text, View } from 'react-native';
+import Config from 'react-native-config';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { ReviewsCard } from '../components/MoviesReviews';
-
 // password MoviesAppOmar123!@#
 
 const MovieDetails = ({ route }: { route: any }) => {
@@ -18,10 +18,10 @@ const MovieDetails = ({ route }: { route: any }) => {
         `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
         {
           headers: {
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjZDg1MjQ0NTNjMDlmMDJiOGIxZGEwN2EyMzdhNDEyNiIsIm5iZiI6MTczOTcwNjI5Ny40OTcsInN1YiI6IjY3YjFjZmI5ODVmNTc2ZTk3ZDZkYjg3ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.rEYNtq2ENmlkDbhb7Ql9MzrQ9oF23gLyChXjkJ1e02A'
+            Authorization: `Bearer ${Config.TOKEN}`
 
           },
-        },
+        }
       );
       setMovie(data);
     } catch (error) {

@@ -93,7 +93,6 @@ const ProfileSetupScreen = () => {
 
   return (
     <View className="flex-1 bg-slate-900 p-6 pt-20 justify-between items-center">
-      {/* ---------- Avatar Section ---------- */}
       <View className="items-center">
         <TouchableOpacity onPress={pickImage} activeOpacity={0.8}>
           <View className="relative">
@@ -119,7 +118,6 @@ const ProfileSetupScreen = () => {
         <Text className="text-slate-400 text-base mt-1">{user?.email}</Text>
       </View>
 
-      {/* ---------- Action Buttons ---------- */}
       <View className="w-full mt-8">
         <TouchableOpacity
           onPress={() => setModalVisible(true)}
@@ -149,7 +147,6 @@ const ProfileSetupScreen = () => {
         </TouchableOpacity>
       </View>
 
-      {/* ---------- Edit Modal ---------- */}
       <Modal
         animationType="slide"
         transparent
