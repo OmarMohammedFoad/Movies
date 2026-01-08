@@ -13,7 +13,7 @@ import { RootState, store } from "./src/store/store";
 const AppContent = () => {
   const { user } = useSelector((state: RootState) => state.auth);
   const dispatch = useDispatch();
-  const [isInitialize, setIsInitialize] = useState(false);
+  const [isInitialize, setIsInitialize] = useState(true);
 
   useEffect(() => {
 

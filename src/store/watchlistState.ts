@@ -91,7 +91,9 @@ export const fetchWatchlist = createAsyncThunk<
       tableId: WATCHLIST_TABLE_ID,
       queries: [Query.equal('userId', userId)]
     });
-    return res as unknown as IWatchlistItem[];
+
+
+    return res.rows as unknown as IWatchlistItem[];
   } catch (error: any) {
     return rejectWithValue(error.message)
   }

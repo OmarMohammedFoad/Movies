@@ -1,16 +1,16 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { getFocusedRouteNameFromRoute } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import axios from "axios";
 import { TouchableOpacity } from "react-native";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useDispatch, useSelector } from "react-redux";
 import HomeScreen from "../Home";
 import MovieDetails from "../pages/MovieDetails";
 import ProfileSetupScreen from "../Profile";
-import WatchList from "../WatchList";
 import { AppDispatch, RootState } from "../store/store";
 import { toggleWatchlist } from "../store/watchlistState";
-import axios from "axios";
+import WatchList from "../WatchList";
 
 
 const Stack = createNativeStackNavigator();
@@ -56,18 +56,10 @@ const HomeStack = () => {
           const movieId = route.params?.id;
           // console.log(typeof movieId);
           const movieDetails = fetchMovieDetails(movieId);
-          console.log(watchList);
 
 
           const isMovieInWatchList = watchList.some((item: any) => item.movieId === movieId?.toString());
-          // console.log(watchList, "wa tchList");
 
-          // console.log(user?.uid);
-
-          // console.log(route, "route in app navigator");
-          // console.log(movieId, "movie in app navigator");
-          console.log(isMovieInWatchList, "watchlist status in app navigator");
-          // console.log(Number(user?.uid), "user id in app navigator");
 
 
 
